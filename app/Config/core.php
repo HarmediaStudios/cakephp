@@ -45,7 +45,7 @@
  * - `handler` - callback - The callback to handle errors. You can set this to any callable type,
  *   including anonymous functions.
  *   Make sure you add App::uses('MyHandler', 'Error'); when using a custom handler class
- * - `level` - integer - The level of errors you are interested in capturing.
+ * - `level` - int - The level of errors you are interested in capturing.
  * - `trace` - boolean - Include stack traces for errors in log files.
  *
  * @see ErrorHandler for more information on error handling and configuration.
@@ -70,9 +70,6 @@
  * - `renderer` - string - The class responsible for rendering uncaught exceptions. If you choose a custom class you
  *   should place the file for that class in app/Lib/Error. This class needs to implement a render method.
  * - `log` - boolean - Should Exceptions be logged?
- * - `skipLog` - array - list of exceptions to skip for logging. Exceptions that
- *   extend one of the listed exceptions will also be skipped for logging.
- *   Example: `'skipLog' => array('NotFoundException', 'UnauthorizedException')`
  *
  * @see ErrorHandler for more information on exception handling and configuration.
  */
@@ -97,8 +94,8 @@
  * /app/webroot/.htaccess
  *
  * And uncomment the App.baseUrl below. But keep in mind
- * that plugin assets such as images, CSS and JavaScript files
- * will not work without URL rewriting!
+ * that plugin assets such as images, CSS and Javascript files
+ * will not work without url rewriting!
  * To work around this issue you should either symlink or copy
  * the plugin assets into you app's webroot directory. This is
  * recommended even when you are using mod_rewrite. Handling static
@@ -106,34 +103,7 @@
  * included primarily as a development convenience - and
  * thus not recommended for production applications.
  */
-	//Configure::write('App.baseUrl', env('SCRIPT_NAME'));
-
-/**
- * To configure CakePHP to use a particular domain URL
- * for any URL generation inside the application, set the following
- * configuration variable to the http(s) address to your domain. This
- * will override the automatic detection of full base URL and can be
- * useful when generating links from the CLI (e.g. sending emails)
- */
-	//Configure::write('App.fullBaseUrl', 'http://example.com');
-
-/**
- * Web path to the public images directory under webroot.
- * If not set defaults to 'img/'
- */
-	//Configure::write('App.imageBaseUrl', 'img/');
-
-/**
- * Web path to the CSS files directory under webroot.
- * If not set defaults to 'css/'
- */
-	//Configure::write('App.cssBaseUrl', 'css/');
-
-/**
- * Web path to the js files directory under webroot.
- * If not set defaults to 'js/'
- */
-	//Configure::write('App.jsBaseUrl', 'js/');
+	Configure::write('App.baseUrl', env('SCRIPT_NAME'));
 
 /**
  * Uncomment the define below to use CakePHP prefix routes.
@@ -221,15 +191,18 @@
 		'defaults' => 'php'
 	));
 
+
+date_default_timezone_set('America/New_York');
+
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi');
+	Configure::write('Security.salt', 'DYhG93214324213sdfgfdgsdfgfdg3b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '76859309657453542496749683645');
+	Configure::write('Security.cipherSeed', '7685930965745354249674943542354354325683645');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -254,7 +227,7 @@
  * Plug in your own custom JavaScript compressor by dropping a script in your webroot to handle the
  * output, and setting the config below to the name of the script.
  *
- * To use, prefix your JavaScript link URLs with '/cjs/' instead of '/js/' or use JsHelper::link().
+ * To use, prefix your JavaScript link URLs with '/cjs/' instead of '/js/' or use JavaScriptHelper::link().
  */
 	//Configure::write('Asset.filter.js', 'custom_javascript_output_filter.php');
 
@@ -285,8 +258,7 @@
  * 		'path' => CACHE, //[optional] use system tmp directory - remember to use absolute path
  * 		'prefix' => 'cake_', //[optional]  prefix every cache file with this string
  * 		'lock' => false, //[optional]  use file locking
- * 		'serialize' => true, //[optional]
- * 		'mask' => 0664, //[optional]
+ * 		'serialize' => true, [optional]
  *	));
  *
  * APC (http://pecl.php.net/package/APC)

@@ -109,9 +109,6 @@ p {
 	padding: 6px 10px;
 	text-align: right;
 }
-#header a, #footer a {
-	color: #fff;
-}
 
 /** containers **/
 div.form,
@@ -739,4 +736,24 @@ pre {
 /** Elements **/
 #url-rewriting-warning {
 	display:none;
+}
+
+
+
+
+
+
+
+#container {
+	width: 1300px;
+}
+
+#create_form {
+	float: left;
+	width: 800px;
+}
+
+#list_emails_wrapper {
+	float: left;
+	margin-top: 75px;
 }

@@ -2,7 +2,7 @@
 /**
  * This is core configuration file.
  *
- * Use it to configure core behaviour of CakePHP.
+ * Use it to configure core behaviour of Cake.
  *
  * PHP 5
  *
@@ -52,12 +52,6 @@
  *
  * unix_socket =>
  * For MySQL to connect via socket specify the `unix_socket` parameter instead of `host` and `port`
- *
- * settings =>
- * Array of key/value pairs, on connection it executes SET statements for each pair
- * For MySQL : http://dev.mysql.com/doc/refman/5.6/en/set-statement.html
- * For Postgres : http://www.postgresql.org/docs/9.2/static/sql-set.html
- * For Sql Server : http://msdn.microsoft.com/en-us/library/ms190356.aspx
  */
 class DATABASE_CONFIG {
 

@@ -28,6 +28,8 @@
  */
 class DbAclSchema extends CakeSchema {
 
+	public $name = 'DbAcl';
+
 	public function before($event = array()) {
 		return true;
 	}
