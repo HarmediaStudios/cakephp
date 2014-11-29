@@ -1,13 +1,13 @@
 $(document).ready(function(){
     $("#VirtualUserDomainId").change(function(event){
-        setEmail($(this).val());
+        setEmail($(this).val(), event);
     });
     $("#VirtualUserUsername").change(function(event){
-        setEmail($("#VirtualUserDomainId").val());
+        setEmail($("#VirtualUserDomainId").val(), event);
     });
 })
 
-function setEmail(domain_value) {
+function setEmail(domain_value, event) {
     $("#VirtualUserDomainId option").each(function (id) {
         if (id == domain_value) {
             $.ajax({
